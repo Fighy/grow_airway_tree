@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PySide import QtCore, QtGui
+from PySide2 import QtCore, QtGui
 
 class Ui_View(object):
     def setupUi(self, View):
@@ -261,7 +261,9 @@ class Ui_View(object):
         self.save_pushButton.setText(QtGui.QApplication.translate("View", "Save", None, QtGui.QApplication.UnicodeUTF8))
         self.info_pushButton.setText(QtGui.QApplication.translate("View", "Info", None, QtGui.QApplication.UnicodeUTF8))
 
-from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
+#from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
+from .nodeeditorsceneviewer import NodeEditorSceneviewerWidget
+
 
 if __name__ == "__main__":
     import sys

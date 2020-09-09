@@ -1,6 +1,6 @@
 import sys
 import os
-from PySide import QtGui
+from PySide2 import QtGui
 from src.view import View
 from src.scene import Scene
 
@@ -101,4 +101,4 @@ sys.exit(app.exec_())
 # Print errors
 num = model._logger.getNumberOfMessages()
 for i in range(0, num):
-    print model._logger.getMessageTextAtIndex(i)
+    print(model._logger.getMessageTextAtIndex(i))
