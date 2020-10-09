@@ -4,6 +4,9 @@ from PySide2 import QtGui
 from src.view import View
 from src.scene import Scene
 
+from PySide2.QtWidgets import QApplication, QLabel
+
+
 from aether.diagnostics import set_diagnostics_on
 from aether.indices import define_problem_type
 from aether.geometry import *
@@ -61,7 +64,8 @@ def save(exnode, exelem):
     export_node_geometry(exnode, 'out')
     export_1d_elem_geometry(exelem, 'out')
 
-app = QtGui.QApplication(sys.argv)
+#app = QtGui.QApplication(sys.argv)
+app = QApplication(sys.argv)
 scene = Scene()
 airwayModel = scene.newModel('airway')
 surfaceModel = scene.newModel('surface')
