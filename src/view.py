@@ -1,10 +1,11 @@
-from PySide2 import QtGui, QtCore
+from PySide2 import QtGui, QtCore,QtWidgets
 from .ui_view import Ui_View
 import os
 
 from opencmiss.zinc.scenecoordinatesystem import SCENECOORDINATESYSTEM_WINDOW_PIXEL_TOP_LEFT
 
-class View(QtGui.QWidget):
+#class View(QtGui.QtWidgets):
+class View(QtWidgets.QWidget):
     def __init__(self, scene, parent=None):
         super(View, self).__init__(parent)
         self._airwayFilenames = ['', '']
