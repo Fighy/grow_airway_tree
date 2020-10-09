@@ -2,7 +2,6 @@ from opencmiss.zinc.context import Context
 from opencmiss.zinc.material import Material
 
 from .model import Model
-
 class Scene(object):
 
     def __init__(self):
