@@ -8,7 +8,6 @@
 # WARNING! All changes made in this file will be lost!
 
 from PySide2 import QtCore, QtGui
-
 class Ui_View(object):
     def setupUi(self, View):
         View.setObjectName("View")
