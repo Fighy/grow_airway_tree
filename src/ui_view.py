@@ -269,7 +269,7 @@ class Ui_View(object):
         self.info_pushButton.setObjectName("info_pushButton")
         self.verticalLayout.addWidget(self.info_pushButton)
         self.horizontalLayout.addWidget(self.controlPanel_widget)
-        self.sceneviewer_widget = Sceneviewer_Widget(View)
+        self.sceneviewer_widget = SceneviewerWidget(View)
         #sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -337,8 +337,8 @@ class Ui_View(object):
         self.save_pushButton.setText(QtWidgets.QApplication.translate("View", "Save", None))
         self.info_pushButton.setText(QtWidgets.QApplication.translate("View", "Info", None))
 
-#from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
-from .nodeeditorsceneviewer import NodeEditorSceneviewerWidget
+from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
+#from .nodeeditorsceneviewer import NodeEditorSceneviewerWidget
 
 
 if __name__ == "__main__":
