@@ -57,8 +57,8 @@ class View(QtWidgets.QWidget):
         self._ui.outputExelem_pushButton.clicked.connect(self._outputExelemClicked)
 
         self._ui.info_pushButton.clicked.connect(self._infoClicked)
-        #self._ui.info_pushButton.setIcon(QtGui.QIcon.fromTheme('dialog-information'))
-        self._ui.info_pushButton.setIcon(QtWidgets.QIcon.fromTheme('dialog-information'))
+        self._ui.info_pushButton.setIcon(QtGui.QIcon.fromTheme('dialog-information'))
+        #self._ui.info_pushButton.setIcon(QtWidgets.QIcon.fromTheme('dialog-information'))
         self._ui.info_pushButton.setText('')
 
     def _graphicsUpdate(self):
