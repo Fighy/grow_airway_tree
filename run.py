@@ -53,7 +53,7 @@ def generate(airwayIpnode, airwayIpelem, surfaceIpnode, surfaceIpelem, options):
     make_data_grid(0, options["gridSize"], False, 'test', 'test')
     evaluate_ordering()
     group_elem_parent_term(options["startNode"])
-    grow_tree(options["startNode"], 1, options["angleMax"], options["angleMin"], options["branchFraction"], options["lengthLimit"], options["shortestLength"], options["rotationLimit"])
+    grow_tree(options["startNode"], options["angleMax"], options["angleMin"], options["branchFraction"], options["lengthLimit"], options["shortestLength"], options["rotationLimit"], False, 'test')
 
     export_node_geometry('.tmp.exnode', 'out')
     export_1d_elem_geometry('.tmp.exelem', 'out')
