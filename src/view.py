@@ -4,7 +4,6 @@ import os
 
 from opencmiss.zinc.scenecoordinatesystem import SCENECOORDINATESYSTEM_WINDOW_PIXEL_TOP_LEFT
 
-#class View(QtGui.QtWidgets):
 class View(QtWidgets.QWidget):
     def __init__(self, scene, parent=None):
         super(View, self).__init__(parent)
@@ -29,7 +28,6 @@ class View(QtWidgets.QWidget):
         self._info = info
     
     def _infoClicked(self):
-        #QtGui.QMessageBox.information(self, 'Information', self._info)
         QtWidgets.QMessageBox.information(self, 'Information', self._info)
     def airwayCallback(self, cb):
         self._airwayCallback = cb
@@ -58,7 +56,6 @@ class View(QtWidgets.QWidget):
 
         self._ui.info_pushButton.clicked.connect(self._infoClicked)
         self._ui.info_pushButton.setIcon(QtGui.QIcon.fromTheme('dialog-information'))
-        #self._ui.info_pushButton.setIcon(QtWidgets.QIcon.fromTheme('dialog-information'))
         self._ui.info_pushButton.setText('')
 
     def _graphicsUpdate(self):
@@ -77,7 +74,6 @@ class View(QtWidgets.QWidget):
         self._loadAirwayClicked()
     
     def _airwayIpnodeClicked(self):
-        #filename, _ = QtGui.QFileDialog.getOpenFileName(parent=self, caption='Open airway ipnode file', dir=self._path, filter='*.ipnode')
         filename, _ = QtWidgets.QFileDialog.getOpenFileName(parent=self, caption='Open airway ipnode file', dir=self._path, filter='*.ipnode')
         if filename:
             self._ui.airwayIpnode_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -85,7 +81,6 @@ class View(QtWidgets.QWidget):
             self._path = os.path.dirname(filename)
 
     def _airwayIpelemClicked(self):
-        #filename, _ = QtGui.QFileDialog.getOpenFileName(parent=self, caption='Open airway ipelem file', dir=self._path, filter='*.ipelem')
         filename, _ = QtWidgets.QFileDialog.getOpenFileName(parent=self, caption='Open airway ipelem file', dir=self._path, filter='*.ipelem') 
         if filename:
             self._ui.airwayIpelem_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -104,7 +99,6 @@ class View(QtWidgets.QWidget):
         self._loadSurfaceClicked()
     
     def _surfaceIpnodeClicked(self):
-        #filename, _ = QtGui.QFileDialog.getOpenFileName(parent=self, caption='Open surface ipnode file', dir=self._path, filter='*.ipnode')
         filename, _ = QtWidgets.QFileDialog.getOpenFileName(parent=self, caption='Open surface ipnode file', dir=self._path, filter='*.ipnode')
         if filename:
             self._ui.surfaceIpnode_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -112,7 +106,6 @@ class View(QtWidgets.QWidget):
             self._path = os.path.dirname(filename)
 
     def _surfaceIpelemClicked(self):
-        #filename, _ = QtGui.QFileDialog.getOpenFileName(parent=self, caption='Open surface ipelem file', dir=self._path, filter='*.ipelem')
         filename, _ = QtWidgets.QFileDialog.getOpenFileName(parent=self, caption='Open surface ipelem file', dir=self._path, filter='*.ipelem')
         if filename:
             self._ui.surfaceIpelem_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -130,7 +123,6 @@ class View(QtWidgets.QWidget):
         self._outputFilenames[1] = str(exelem)
     
     def _outputExnodeClicked(self):
-        #filename, _ = QtGui.QFileDialog.getSaveFileName(parent=self, caption='Save output exnode file', dir=self._path, filter='*.exnode')
         filename, _ = QtWidgets.QFileDialog.getSaveFileName(parent=self, caption='Save output exnode file', dir=self._path, filter='*.exnode')
         if filename:
             self._ui.outputExnode_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -138,7 +130,6 @@ class View(QtWidgets.QWidget):
             self._path = os.path.dirname(filename)
 
     def _outputExelemClicked(self):
-        #filename, _ = QtGui.QFileDialog.getSaveFileName(parent=self, caption='Save output exelem file', dir=self._path, filter='*.exelem')
         filename, _ = QtWidgets.QFileDialog.getSaveFileName(parent=self, caption='Save output exelem file', dir=self._path, filter='*.exelem')
         if filename:
             self._ui.outputExelem_lineEdit.setText(os.path.relpath(filename, os.getcwd()))
@@ -159,15 +150,11 @@ class View(QtWidgets.QWidget):
         }
 
         if self._generateCallback:
-            #QtGui.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
             QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
             self._generateCallback(self._airwayFilenames[0], self._airwayFilenames[1], self._surfaceFilenames[0], self._surfaceFilenames[1], options)
-            #QtGui.QApplication.restoreOverrideCursor()
             QtWidgets.QApplication.restoreOverrideCursor()
     def _saveClicked(self):
         if self._saveCallback:
-            #QtGui.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
             QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
             self._saveCallback(self._outputFilenames[0], self._outputFilenames[1])
-            #QtGui.QApplication.restoreOverrideCursor()
             QtWidgets.QApplication.restoreOverrideCursor()
